@@ -1,0 +1,14 @@
+experiences:
+
+- place: "University of Copenhagen"
+  time: "2023 - 2025"
+  title: "M.S. Student"
+  subtitle: "Computer Science"
+  # category: "school"
+  category: "work"
+
+- place: "Beijing Institute of Technology"
+  time: "2018 - 2022"
+  title: "B.S. Student"
+  subtitle: "Computing Science"
+  category: "school"
