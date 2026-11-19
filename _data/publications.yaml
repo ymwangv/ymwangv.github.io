@@ -1,0 +1,7 @@
+papers:
+  - title: "Self-Critique and Refinement for Faithful Natural Language Explanations"
+    authors: "<b>Yingming Wang</b>, Pepa Atanasova"
+    venue: "Conference on Empirical Methods in Natural Language Processing (EMNLP), 2025"
+    paper_pdf: "https://arxiv.org/abs/2505.22823"
+    selected: y
+    code: "https://github.com/ymwangv/SR-NLE"

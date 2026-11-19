@@ -1,0 +1,93 @@
+.timeline {
+  --gutter: clamp(14px, 3vw, 26px);
+  --marker: #1EAEDB;
+  --date: #0c7ea5;
+  --line: rgba(128, 128, 128, .35);
+  --flag: rgba(128, 128, 128, .16);
+  --surface: #fff;
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: .45rem 0;
+  list-style: none;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 50%;
+  width: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom, transparent, var(--line) 6%, var(--line) 94%, transparent);
+}
+.timeline > li {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: calc(2 * var(--gutter));
+  align-items: start;
+  margin: 0;
+  padding: .75rem 0 1.65rem;
+  line-height: 1.5;
+}
+.timeline > li::before {
+  content: "";
+  position: absolute;
+  top: calc(.75rem + .75em);
+  left: 50%;
+  box-sizing: border-box;
+  width: 9px;
+  height: 9px;
+  border: 1.5px solid var(--marker);
+  border-radius: 50%;
+  background: var(--surface);
+  transform: translate(-50%, -50%);
+}
+.timeline-entry { min-width: 0; overflow-wrap: anywhere; }
+.timeline-left .timeline-entry { grid-column: 1; text-align: right; }
+.timeline-right .timeline-entry { grid-column: 2; }
+.timeline-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 .9em;
+}
+.timeline-left .timeline-head { flex-direction: row-reverse; }
+.timeline-entry p, .timeline-places, .timeline-places li { margin: 0; }
+.timeline-places {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .3em;
+  padding: 0;
+  list-style: none;
+  font-size: 1em;
+}
+.timeline-left .timeline-places { align-items: flex-end; }
+.timeline-place, .timeline-places li {
+  padding: .15em .6em;
+  border-radius: 4px;
+  background: var(--flag);
+  color: inherit;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.timeline-entry .timeline-role { margin-top: .3rem; font-weight: 600; }
+.timeline-note { opacity: .7; font-size: .92em; }
+.timeline-date {
+  color: var(--date);
+  font-size: .88em;
+  font-weight: 500;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+@media (max-width: 550px) {
+  .timeline { --axis: 5px; }
+  .timeline::before, .timeline > li::before { left: var(--axis); }
+  .timeline > li {
+    grid-template-columns: minmax(0, 1fr);
+    padding: .75rem 0 1.4rem calc(var(--axis) + var(--gutter));
+  }
+  .timeline .timeline-entry { grid-column: 1; text-align: left; }
+  .timeline .timeline-head { flex-direction: row; }
+  .timeline .timeline-places { align-items: flex-start; }
+}

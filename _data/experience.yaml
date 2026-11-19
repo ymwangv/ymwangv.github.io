@@ -1,0 +1,21 @@
+experiences:
+
+- places:
+    - "ELLIS Institute Finland"
+    - "University of Turku"
+  time: "2026 – present"
+  title: "PhD Student"
+  subtitle: "Supervisor: Shaoxiong Ji"
+
+- place: "Aalborg University"
+  time: "2026"
+  title: "RA @ AAUNLP"
+  subtitle: "Supervisor: Johannes Bjerva"
+
+- place: "University of Copenhagen"
+  time: "2023–2025"
+  title: "M.S. in Computer Science"
+
+- place: "Beijing Institute of Technology"
+  time: "2018–2022"
+  title: "B.S. in Computer Science"
